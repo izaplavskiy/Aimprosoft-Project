@@ -1,0 +1,385 @@
+@mixin center-items 
+  align-items: center
+  justify-items: center
+
+@mixin center-self
+  align-self: center
+  justify-self: center
+
+
+html
+  height: 100%
+
+body
+  height: 100%
+  font: 14px/16px 'Rajdhani', sans-serif
+  color: #000
+  background: #fff
+
+a
+  color: #000
+  text-decoration: none
+
+  &:hover
+    text-decoration: none
+
+*
+  padding: 0
+  margin: 0
+  outline: none
+  box-sizing: border-box
+
+.center 
+  margin: 0 auto 
+  width: 80%  
+
+.wrapper
+  .superstructure
+    display: grid
+    grid-template: 16px / 1fr
+    justify-items: center
+    position: relative
+    background: #c5c5c5
+    font: 0.9rem bold 'Rajdhani', sans-serif
+    letter-spacing: 0.1rem
+    text-transform: uppercase
+    color: #fff
+    text-align: center;
+
+    .superstructure--pagination_small
+      display: inline-block
+      position: absolute
+      top: 8%
+      right: 13%
+      width: 42px
+      height: 14px
+
+      .superstructure--pagination_small-item
+        display: inline-block
+        width: 10px
+        height: 10px
+        background: url(../img/pag-head-small-white.png) no-repeat center
+        cursor: pointer
+
+        &:hover
+          background: url(../img/pag-head-small-black.png) no-repeat center
+
+  .home
+    display: grid
+    // grid-template-rows: 90% 10%
+    // grid-template-columns: 35% 65%  
+    grid-template: 90% 10% / 35% 65% 
+    height: 100vh
+    width: 100%
+    background: url(../img/home-bg.jpg) no-repeat center
+    background-size: cover
+    
+    .home-wrap
+      width: 100%
+      padding-left: 5%
+      margin-top: 10%
+      text-transform: uppercase
+      @include center-self
+      text-align: center
+      
+
+      .home-wrap--title p:first-child
+        font: 2.5em 'Rajdhani', sans-serif
+
+      .home-wrap--title p:last-child
+        margin: 5% 0 8% 0
+        font: 1.6em 'Courier New', serif
+        white-space: nowrap
+
+      .font-medium
+        font-weight: 500
+
+      .home-wrap--title-line
+        display: block
+        width: 80%
+        margin: 1% 10% 
+        border-bottom: 1.5px solid #212120
+
+      .home-wrap--button
+        margin: 0 auto
+        padding: 2% 3%
+        background: transparent
+        border: 2px solid #393939
+        font-weight: 500
+        font-size: 1.7em
+        cursor: pointer
+
+        &:hover
+          color: #fff
+          background: #393939
+
+    .home-wrap--pagination
+      grid-row: 2 
+      grid-column: 1 / 3 
+      @include center-self
+      text-align: center
+      width: 100%
+      
+      .home-wrap--pagination-item
+        display: inline-block
+        width: 18px
+        height: 18px
+        margin: 0 1px
+        background: url(../img/pag-big-white.png) no-repeat center
+        border-radius: 50%
+        cursor: pointer
+        border: 0.5px solid #929292
+
+        &:hover
+          background: url(../img/pag-big-black.png) no-repeat center
+
+  .header
+    background: #000
+    color: #fff
+
+    .header--wrap
+      width: 80%
+      margin: 0 auto
+      display: grid
+      grid-template: 45px / repeat(3, 1fr)
+
+      .header--wrap-menu
+        align-self: center
+        justify-self: start
+
+        .material-icons
+          font-size: 2.5em
+          cursor: pointer
+
+      .header--wrap-logo
+        @include center-self
+        font: bold 2em 'Rajdhani', sans-serif
+        cursor: pointer
+
+      .header--wrap-login-basket
+        display: grid
+        grid-template: 1fr / 70% 30%
+        justify-items: end
+        
+
+        .login
+          justify-self: end
+          font: 500 1.8em 'Rajdhani', sans-serif
+          color: #fff
+          background: transparent
+          border: none
+          text-transform: uppercase
+          cursor: pointer
+          white-space: nowrap
+
+        .basket 
+          justify-self: end
+          align-self: center
+          display: block
+          height: 32px
+          width: 46px
+          background: url(../img/basket.png) no-repeat center
+          cursor: pointer
+
+  .separator
+    margin: 2% 0
+    text-align: center
+    
+    
+    .separator_bg-left, .separator_bg-right
+      display: inline-block
+      margin-bottom: 1px
+      width: 69px
+      height: 12px
+      
+
+    .separator_bg-left
+      margin-right: 1.5% 
+      background: url(../img/separator-left.png) no-repeat center  
+
+    .separator_bg-right
+      margin-left: 1.5%
+      background: url(../img/separator-right.png) no-repeat center
+      
+
+    .separator_title
+      display: inline-block
+      font-size: 1.6em
+      color: #393939
+      text-transform: uppercase
+      line-height: 1.6em
+
+  .carousel
+    width: 80%
+    // display: grid
+    // // grid-template-rows: 1fr
+    // grid-template-columns: 12px repeat(6, 1fr) 12px
+    // grid-column-gap: 1%
+    // @include center-items
+    
+    .carousel_wrap
+      // display: grid
+      // grid-template-columns: 12px repeat(6, 100px) 12px
+      // grid-column-gap: 1%
+      margin: 10px 30px
+      overflow: hidden
+      position: relative
+
+
+      .carousel_btn-left, .carousel_btn-right
+        display: block
+        position: relative
+        top: 106px
+        width: 12px
+        height: 19px
+        cursor: pointer
+        z-index: 999
+        // border: 1px solid blue
+        
+
+      .carousel_btn-left
+        // margin-left: 60px
+        float: left
+        background: url(../img/carousel-btn-left.png) no-repeat center
+
+      .carousel_btn-right
+        float: right
+        background: url(../img/carousel-btn-left.png) no-repeat center
+        transform: rotate(180deg)
+
+      .carousel_wrap-items
+        display: grid
+        grid-template-columns: repeat(6, 1fr)
+        grid-column-gap: 1%
+        padding: 0 0.7%
+
+        .carousel_item-wrap
+          @include center-self
+          // border: 1px solid red
+          
+          
+          
+          .carousel_item
+            position: relative
+
+          .carousel_item img
+            display: block
+            width: 100%
+            // position: relative
+
+          .comprar
+            display: inline-block
+            position: absolute
+            left: 0
+            bottom: 0
+            width: 100%
+            height: 20px
+            background: rgba(0,0,0,.7)
+            color: #fff
+            font: 600 1em 'Rajdhani', sans-serif
+            letter-spacing: 0.1em
+          
+
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px)
+
+  body
+    font-size: 80%
+
+  .wrapper
+    .superstructure
+      .superstructure--pagination_small 
+        display: none
+
+    .home
+      background: url(../img/home-bg-medium.jpg) no-repeat center
+      background-size: cover
+      height: 50vh
+
+      .home-wrap
+        font-size: 80%
+
+
+
+      .home-wrap--pagination
+        .home-wrap--pagination-item
+          width: 12px
+          height: 12px
+          background: url(../img/pag-medium-white.png) no-repeat center
+
+          &:hover
+            background: url(../img/pag-medium-black.png) no-repeat center  
+
+
+
+      
+@media screen and (max-width: 768px)  
+
+  body
+    font-size: 80%  
+
+  .wrapper
+    .superstructure
+      font-size: 80%
+
+      .superstructure--pagination_small 
+        display: none
+
+    .home
+      background: url(../img/home-bg-small.jpg) no-repeat center
+      background-size: cover
+      height: 40vh
+
+      .home-wrap
+        font-size: 60%
+
+        .home-wrap--title
+          .home-wrap--title-line
+            width: 90%
+            margin: 1% 5%
+
+        
+      .home-wrap--pagination
+        .home-wrap--pagination-item
+          width: 12px
+          height: 12px
+          background: url(../img/pag-medium-white.png) no-repeat center
+          
+
+          &:hover
+            background: url(../img/pag-medium-black.png) no-repeat center
+
+    .header
+      font-size: 110%
+
+
+      .header--wrap
+        width: 95%
+        grid-template: 45px / repeat(3, 15% 70% 15%)
+
+        .header--wrap-login-basket
+          grid-template: 1fr / 1fr
+          justify-items: end
+
+          .login
+            display: none
+
+          .basket
+            justify-self: end
+            background: url(../img/basket-small.png) no-repeat center
+
+    .separator
+      font-size: 80%
+      .separator_bg-left, .separator_bg-right
+        width: 42px
+        height: 7px
+      
+
+      .separator_bg-left
+        background: url(../img/separator-left-small.png) no-repeat center  
+
+      .separator_bg-right
+        background: url(../img/separator-right-small.png) no-repeat center
+
+  
